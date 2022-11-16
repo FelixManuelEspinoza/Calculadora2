@@ -111,15 +111,15 @@ namespace Calculadora2
                 columna2.Width = 24;
                 Matris2.Columns.Add(columna2);
 
-                DataGridViewColumn columna3 = new DataGridViewColumn(new DataGridViewTextBoxCell());
-                columna3.Name = (i + 1).ToString();
-                columna3.Width = 24;
-                MatrisResultado.Columns.Add(columna3);
+                //DataGridViewColumn columna3 = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                //columna3.Name = (i + 1).ToString();
+                //columna3.Width = 24;
+                //MatrisResultado.Columns.Add(columna3);
             }
 
             Matris1.Rows.Add(n);
             Matris2.Rows.Add(n);
-            MatrisResultado.Rows.Add(n);
+            //MatrisResultado.Rows.Add(n);
         }
 
         private void MatrisResultado_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -129,16 +129,17 @@ namespace Calculadora2
 
         private void Llenar_resultado_Click(object sender, EventArgs e)
         {
-            //    n = (int)Selector.Value;
-            //    MatrisResultado.Columns.Clear();
+            n = (int)Selector.Value;
+            MatrisResultado.Columns.Clear();
 
-            //    for (int i = 0; i < n; i++)
-            //    {
-            //        DataGridViewColumn columna3 = new DataGridViewColumn(new DataGridViewTextBoxCell());
-            //        columna3.Name = (i + 1).ToString();
-            //        columna3.Width = 24;
-            //        MatrisResultado.Columns.Add(columna3);
-            //    }
+            for (int i = 0; i < n; i++)
+            {
+                DataGridViewColumn columna3 = new DataGridViewColumn(new DataGridViewTextBoxCell());
+                columna3.Name = (i + 1).ToString();
+                columna3.Width = 24;
+                MatrisResultado.Columns.Add(columna3);
+            }
+            MatrisResultado.Rows.Add(n);
         }
     }
 }
